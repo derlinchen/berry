@@ -1,4 +1,31 @@
 server:
-  port: 8080
-  servlet:
-    context-path: /berry
+  port: 8888
+  
+  
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  
+spring:
+  datasource:
+    # 配置数据库连接等
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rcms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: derlin2008
+    # 配置数据库连接池
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      maximum-pool-size: 25
+      minimum-idle: 10
+      pool-name: ExpendHikariCP
+      
+jasypt:
+  encryptor:
+    password: axon

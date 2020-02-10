@@ -4,12 +4,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@RequestMapping("/user")
 public class UserController {
 
-	@GetMapping(value = "/test")
+	@GetMapping(value = "/login")
 	 public String test() {
-		return "user";
+		return "super_admin";
 	}
 }
